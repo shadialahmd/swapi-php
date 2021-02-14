@@ -1,19 +1,19 @@
 <?php
 
-header("Content-type:application/json");
+//header("Content-type:application/json");
 
 
 class Read{
 
-    private $url="https://swapi.dev/api/people/";
+    //private $url="https://swapi.dev/api/people/";
 
 
 
-    public function getall(){
+    public function getall($url){
 
         $curl=curl_init();
         curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
-        curl_setopt($curl,CURLOPT_URL,$this->url);
+        curl_setopt($curl,CURLOPT_URL,$url);
         $result=curl_exec($curl);
 
        // return $arr=json_decode($result,true); //return data as array or object
@@ -24,9 +24,8 @@ class Read{
 
 }
 
-$r=new Read();
-print_r($r->getall());
 
 
 
 ?>
+
